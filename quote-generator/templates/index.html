@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citation Aléatoire</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #fcf6b1, #bda13b);
+            font-family: Arial, sans-serif; /* Police de caractères */
+            margin: 0; /* Supprime les marges par défaut du body */
+            display: flex; /* Utilisation de flexbox pour centrer le contenu */
+            justify-content: center; /* Centrage horizontal */
+            align-items: center; /* Centrage vertical */
+            height: 100vh; /* Hauteur de la page égale à la hauteur de la fenêtre */
+            position: relative; /* Position relative pour positionner l'image absolument */
+        }
+
+        .card {
+            width: 300px; /* Largeur de la carte */
+            background-color: #f9f7f4; /* Couleur de fond de la carte */
+            border-radius: 10px; /* Coins arrondis */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre */
+            padding: 20px; /* Espacement intérieur */
+            position: relative; /* Positionnement relatif pour placer le bouton de façon absolue */
+        }
+
+        /* Style pour le titre */
+        .card h1 {
+            color: #bd9642; /* Couleur du titre */
+            font-size: 24px; /* Taille de police du titre */
+            margin-bottom: 10px; /* Espacement en bas du titre */
+        }
+
+        /* Style pour le texte à l'intérieur de la carte */
+        .card p {
+            color: #333333; /* Couleur du texte */
+            font-size: 16px; /* Taille de police */
+            line-height: 1.5; /* Hauteur de ligne */
+        }
+
+        /* Style pour le cadre du bouton */
+        .button-frame {
+            position: absolute; /* Positionnement absolu */
+            bottom: -25px; /* Déplacement vers le bas pour être à moitié à l'extérieur de la carte */
+            left: 50%; /* Déplacement horizontal pour être au centre */
+            transform: translateX(-50%); /* Ajustement pour centrer le cadre */
+            background-color: #ffffff; /* Couleur de fond du cadre */
+            border-radius: 50%; /* Forme ronde */
+            width: 50px; /* Largeur du cadre */
+            height: 50px; /* Hauteur du cadre */
+            display: flex; /* Utilisation de flexbox pour centrer le bouton */
+            justify-content: center; /* Centrage horizontal */
+            align-items: center; /* Centrage vertical */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre */
+        }
+
+        /* Style pour le bouton de rechargement */
+        .reload-button {
+            background-image: url('https://icons.iconarchive.com/icons/icons8/ios7/512/Very-Basic-Reload-icon.png'); /* Image de la flèche */
+            background-size: cover; /* Redimensionnement de l'image pour remplir le bouton */
+            background-color: #ffffff;
+            width: 30px; /* Largeur du bouton */
+            height: 30px; /* Hauteur du bouton */
+            border: none; /* Suppression de la bordure */
+            cursor: pointer; /* Curseur indiquant que le bouton est cliquable */
+        }
+
+        /* Style pour positionner l'image en bas à gauche */
+        .bottom-left-image {
+            position: absolute; /* Positionnement absolu */
+            bottom: 0; /* Coller en bas de la fenêtre */
+            left: 0; /* Coller à gauche de la fenêtre */
+            width: 300px; /* Largeur de l'image */
+            height: auto; /* Hauteur automatique proportionnelle */
+            margin: 20px; /* Marge de 20px à partir du bord de la fenêtre */
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Citation Aléatoire</h1>
+        <p><strong>Auteur:</strong> {{ citation.auteur }}</p>
+        <p><strong>Citation:</strong> {{ citation.citation }}</p>
+        <div class="button-frame">
+            <button class="reload-button" onclick="window.location.reload();"></button>
+        </div>
+    </div>
+    
+    <!-- Image affichée en bas à gauche de l'écran -->
+    <a href="https://github.com/Xera-Dev"><img src="https://i.postimg.cc/HWX87v2g/made-by-xera.png" alt="Image" class="bottom-left-image"></a>
+</body>
+</html>
